@@ -1,0 +1,166 @@
+/*css variables*/
+:root{
+    --primary:rgb(92, 185, 194);
+    --dark:rgb(54, 2, 60);
+    --light:rgb(169, 113, 157);
+    --shadow:0 1px 5px rgba(104,104,104.0.8)
+}
+html{
+    box-sizing: border-box;
+    color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color:white ;
+    margin:30px 50px;
+    line-height: 1.4rem;
+}
+.btn{
+    background-color: var(--dark);
+    color: #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-align: center;
+    border:0;
+}
+.img{
+    max-width: 100%;
+    height: 100%;
+}
+.clickbar{
+    display: grid;
+    gap: 20px;
+}
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(5,1fr);
+}
+.main-nav a{
+    background-color: var(--primary);
+    color: var(--light);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 19px;
+    box-shadow: var(--shadow);
+}
+.main-nav a:hover{
+    background-color: var(--dark);
+    color: #aaa;
+    transform: scale(1.1);
+}
+/*main container*/
+.main-container{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+   
+}
+.showcase{
+    grid-area: showcase;
+    height: 500px;
+    background-image: url("https://www.simplyrecipes.com/thmb/DcaXc-5q2Y805wGbFp4l5UE2Hf8=/3190x1794/smart/filters:no_upscale()/Simply-Recipes-Veggie-Tacos-LEAD-2-2fa9781c94da4b9797af48af47313854.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    box-shadow: var(--light);
+    justify-content: center;
+}
+.showcase h1{
+    font-size: 25px;
+    margin-bottom: 0;
+    color:var(--dark);
+}
+.showcase p{
+    font-size: 15px;
+    margin-top: o;
+    color: var(--dark);
+}
+.top-box{
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--primary);
+    padding: 10px;
+}
+.top-box p{
+    font-size: larger;
+}
+.top-box-a{
+    grid-area:top-box-a;
+
+}
+.top-box-b{
+    grid-area:top-box-b;
+}
+/* box adjustment */
+.boxes{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+.box{
+    background: var(--primary);
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+}
+/* info section */
+.info{
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+.portfolio{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+.portfolio img{
+    background: var(--shadow);
+    grid-gap: 10px;
+}
+/* footer */
+footer{
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    margin-top: 10px;
+}
+/* media queries for responsiveness */
+@media(max-width=700px){
+    .main-container{
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b'
+    }
+    .main-nav ul{
+        grid-template-columns: 1fr;
+    }
+    .info{
+        grid-template-columns: 1fr;
+    }
+    .info.btn{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+}
+@media(max-width=500px){
+    .main-container{
+        grid-template-areas: 
+        'showcase'
+        'top-box-a' 
+        'top-box-b'
+    }
+}
